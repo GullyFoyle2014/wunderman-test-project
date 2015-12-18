@@ -1,0 +1,22 @@
+{
+  "name": "wunderman_test_project",
+  "description": "test project for wunderman position",
+  "main": "index.js",
+  "authors": [
+    "Alex Morse"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "test",
+    "project"
+  ],
+  "moduleType": [],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

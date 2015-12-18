@@ -1,0 +1,29 @@
+/*test project*/
+#head {
+  min-height: 600px;
+  position: relative;
+  background: #000;
+}
+#head #nav {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+#head #nav .menu {
+  overflow: hidden;
+  width: 20px;
+  height: 0;
+  background: red;
+  border-radius: 64%;
+  display: inline-block;
+  padding-top: 20px;
+}
+#head #mainLogo {
+  background: #fff;
+}
+
+#imagesGrid {
+  min-height: 800px;
+}
+
+/*# sourceMappingURL=testproject.css.map */
