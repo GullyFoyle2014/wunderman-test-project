@@ -255,31 +255,167 @@ caption {
 /*# sourceMappingURL=reset.css.map */
 
 /*test project*/
-#head {
+@font-face {
+  font-family: 'knockout';
+  src: url("/fonts/knockout-67-webfont.eot");
+  src: url("/fonts/knockout-67-webfont-.eot#iefix") format("embedded-opentype"), url("/fonts/knockout-67-webfont.woff2") format("woff2"), url("/fonts/knockout-67-webfont.woff") format("woff"), url("/fonts/knockout-67-webfont.ttf") format("truetype"), url("/fonts/knockout-67-webfont.svg#knockout67_full_bantamweight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'knockout48_featherweight';
+  src: url("/fonts/knockout-48-webfont.eot");
+  src: url("/fonts/knockout-48-webfont-.eot#iefix") format("embedded-opentype"), url("/fonts/knockout-48-webfont.woff2") format("woff2"), url("/fonts/knockout-48-webfont.woff") format("woff"), url("/fonts/knockout-48-webfont.ttf") format("truetype"), url("/fonts/knockout-48-webfont.svg#knockout48_featherweight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'knockout46_flyweight';
+  src: url("/fonts/knockout-46-webfont.eot");
+  src: url("/fonts/knockout-46-webfont-.eot#iefix") format("embedded-opentype"), url("/fonts/knockout-46-webfont.woff2") format("woff2"), url("/fonts/knockout-46-webfont.woff") format("woff"), url("/fonts/knockout-46-webfont.ttf") format("truetype"), url("/fonts/knockout-46-webfont.svg#knockout46_flyweight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'knockout-lightweight';
+  src: url("/fonts/knockout-69-webfont.eot");
+  src: url("/fonts/knockout-69-webfont-.eot#iefix") format("embedded-opentype"), url("/fonts/knockout-69-webfont.woff2") format("woff2"), url("/fonts/knockout-69-webfont.woff") format("woff"), url("/fonts/knockout-69-webfont.ttf") format("truetype"), url("/fonts/knockout-69-webfont.svg#knockout69_full_liteweight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.opaque {
+  opacity: .2;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.media {
+  margin: 0;
+}
+
+body {
+  background: #282828;
+}
+body #head {
   min-height: 600px;
   position: relative;
-  background: #000;
 }
-#head #nav {
-  position: absolute;
-  top: 10%;
-  left: 20%;
+body #head .head-cont {
+  position: relative;
+  height: 100%;
+  max-width: 1023px;
+  margin: 0 auto;
+  background: url("/img/bg-black-new.jpg") no-repeat left top;
 }
-#head #nav .menu {
+@media screen and (max-width: 1051px) {
+  body #head .head-cont {
+    max-width: 685px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body #head .head-cont {
+    max-width: 341px;
+  }
+}
+body #head .head-cont h1 {
+  padding-top: 25px;
+  font-family: knockout,arial,sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 23px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+body #head .head-cont #nav {
+  position: fixed;
+  z-index: 1000;
+  margin-top: 4px;
+  margin-left: 14px;
+}
+body #head .head-cont #nav .menu {
   overflow: hidden;
   width: 20px;
   height: 0;
-  background: red;
-  border-radius: 64%;
+  background: url(/img/beats-logo.png) no-repeat left top;
+  background-size: contain;
   display: inline-block;
   padding-top: 20px;
 }
-#head #mainLogo {
-  background: #fff;
+body #head .head-cont #mainLogo {
+  position: relative;
+  top: calc(33% - 80px);
+  width: 235px;
+  height: 250px;
+  margin: 0 auto;
+  background: url("/img/logo-frame-2x.png") no-repeat top;
+  background-size: contain;
 }
-
-#imagesGrid {
+body #head .head-cont #mainLogo #addCaption {
+  position: absolute;
+  bottom: 1px;
+  left: 4px;
+  line-height: 66px;
+  font-size: 32px;
+  width: 228px;
+  background: #000;
+  border: 1px solid #666;
+  color: #e31d24;
+  text-indent: 5px;
+}
+body #imagesGrid {
   min-height: 800px;
+}
+body #imagesGrid .theImagesContainer.row {
+  margin: 0 0 0 0;
+}
+body #imagesGrid .theImagesContainer ul {
+  overflow: hidden;
+  max-width: 1023px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1051px) {
+  body #imagesGrid .theImagesContainer ul {
+    max-width: 685px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body #imagesGrid .theImagesContainer ul {
+    max-width: 341px;
+  }
+  body #imagesGrid .theImagesContainer ul .col-xs-6 col-centered {
+    float: none;
+    width: 100%;
+    clear: both;
+  }
+}
+body #imagesGrid .theImagesContainer ul li {
+  overflow: hidden;
+  width: 341px;
+  height: 341px;
+  padding: 0;
+  background: #000;
+}
+body #imagesGrid .theImagesContainer ul li .imagesGridLink {
+  display: block;
+  z-index: 20000;
+}
+body #imagesGrid .theImagesContainer ul li .imagesGridCaption {
+  display: none;
+  z-index: 21000;
+  color: #fff;
+  font-size: 15px;
+}
+body #imagesGrid .theImagesContainer ul li .imagesGridLink.show + .imagesGridCaption {
+  display: block;
+  position: absolute;
+  top: 0px;
+  -webkit-transition: display 0.2s ease-in-out;
+  -moz-transition: display 0.2s ease-in-out;
+  transition: display 0.2s ease-in-out;
+}
+body #imagesGrid .theImagesContainer ul li img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=testproject.css.map */

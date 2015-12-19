@@ -2,33 +2,26 @@
 $(document).ready(function(){
 
 
-function resizeDiv() {
-	vpw = $(window).width();
-	vph = $(window).height();
-	$('#head').css({'height': vph + 'px'});
-}
+	function resizeDiv() {
+		vpw = $(window).width();
+		vph = $(window).height();
+		$('#head').css({'height': vph + 'px'});
+	}
+	resizeDiv();
 
-// jQuery.fn.center = function () {
-//     this.css("position","absolute");
-//     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-//                                                 $(window).scrollTop()) + "px");
-//     this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-//                                                 $(window).scrollLeft()) + "px");
-//     return this;
-// };
+	$('.imagesGridLink').on('mouseenter', function(e){
+	    e.preventDefault();
+	    $('.imagesGridCaption').hide();
+	    $('.imagesGridLink').removeClass('opaque show');
+	    $(this).toggleClass('opaque show');
+	    $(this).next('span').show();
+	});
 
+	window.onresize = function(event) {
+		resizeDiv();
 
-
-
-resizeDiv();
-//$('#mainLogo').center();
-
-
+	};
 
 });//end doc.ready
 
-window.onresize = function(event) {
-	resizeDiv();
-//	$('#mainLogo').center();
-};
 
